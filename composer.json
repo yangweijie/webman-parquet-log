@@ -1,0 +1,33 @@
+{
+  "name": "yangweijie/webman-parquet-log",
+  "type": "library",
+  "license": "MIT",
+  "description": "Webman plugin yangweijie/parquet-log",
+  "require": {
+    "php": ">=7.4",
+    "workerman/webman-framework": "^1.2",
+    "flow-php/etl": "^0.10.0",
+    "flow-php/parquet": "1.x-dev",
+    "flow-php/etl-adapter-parquet": "1.x-dev",
+    "funkjedi/composer-include-files": "^1.0",
+    "monolog/monolog": "^3.0",
+    "pugx/shortid-php": "^1.0",
+    "symfony/finder": "^7.2",
+    "symfony/var-dumper": "^6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Yangweijie\\WebmanParquetLog\\": "src"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "funkjedi/composer-include-files": true
+    }
+  },
+  "extra": {
+    "include_files": [
+      "custom/Path.php"
+    ]
+  }
+}
