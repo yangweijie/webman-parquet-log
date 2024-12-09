@@ -27,15 +27,7 @@ class Logger {
     }
 
     public function log(array $data) {
-        $info = [];
         $destination = $this->logFile;
-
-        foreach ($data as $type => $msges) {
-            foreach ($msges as $msg) {
-                $info[] = $msg;
-            }
-        }
-
         var_dump($data);
 
         $old_logs = [];
@@ -49,7 +41,7 @@ class Logger {
                 ->run();
         }
         data_frame()
-            ->read(from_array(array_merge($old_logs, $info), $this->schema))
+            ->read(from_array(array_merge($old_logs, $data), $this->schema))
             ->collect()
             ->saveMode(overwrite())
             ->write(to_parquet($destination))
